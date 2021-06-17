@@ -26,6 +26,28 @@ public class CalcEngineSet extends CalcEngine{
         super();
     }
     
+    public void setDisplayValue(String display) {
+    	displayValue = Integer.parseInt(display);
+    }
+    
+    public Set<String> stringToSet(String input) {
+    	Set<String> set = new HashSet<String>();
+		String[] array = input.split("");
+		for(String s : array) {
+			set.add(s);
+		}
+    	return set;
+    }
+    
+    public void setResult() {
+    	
+    }
+    
+    public void setSet(String inputA, String inputB) {
+    	setA = stringToSet(inputA);
+    	setB = stringToSet(inputB);
+    }
+    
     public void clear() {}
     
     public Set<String> union(){
@@ -48,4 +70,5 @@ public class CalcEngineSet extends CalcEngine{
     	setResult.removeAll(setB);
     	return setResult;
     }
+    
 }

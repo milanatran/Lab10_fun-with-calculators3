@@ -18,7 +18,7 @@ public class CalcEngine
     private char lastOperator;
 
     // The current value (to be) shown in the display.
-    private int displayValue;
+    protected int displayValue;
     // The value of an existing left operand.
     private int leftOperand;
 

@@ -27,7 +27,8 @@ public class UserInterfaceSet extends UserInterface {
         super(engine);
         calcSet = engine;
     }
-
+    
+    
 	public void makeFrame() {
 		frame = new JFrame(calc.getTitle());
         
@@ -64,23 +65,33 @@ public class UserInterfaceSet extends UserInterface {
 
         status = new JLabel(calc.getAuthor());
         
-        JTextField result = new JTextField("Result");
+        displayResult = new JTextField("Result");
         
-        contentPane.add(result, BorderLayout.SOUTH);
+        contentPane.add(displayResult, BorderLayout.SOUTH);
         //contentPane.add(status, BorderLayout.SOUTH);
 
         frame.pack();
 	}
-	
 
 	 public void actionPerformed(ActionEvent event)
 	    {
 	        String command = event.getActionCommand();
 
-	        if(command.equals("Union")) calcSet.union();
-	        else if(command.equals("Intersection")) calcSet.intersection();
-	        else if(command.equals("Subtraction")) calcSet.subtraction();
-	        else if(command.equals("Clear"))  calcSet.clear();
+	        if(command.equals("Union")) {
+	        	 calcSet.setSet(display.getText(), displaySet2.getText());
+	             displayResult.setText( calcSet.union().toString());
+	        }
+	        else if(command.equals("Intersection")) {
+	        	calcSet.setSet(display.getText(), displaySet2.getText());
+	        	 displayResult.setText( calcSet.intersection().toString());
+	        }
+	        else if(command.equals("Subtraction")) {
+	        	calcSet.setSet(display.getText(), displaySet2.getText());
+	        	 displayResult.setText( calcSet.subtraction().toString());
+	        }
+	        else if(command.equals("Clear"))  {
+	        	calcSet.clear();
+	        }
 	        else if(command.equals("Push Set A")) {}
 	        else if(command.equals("Push Set B")) {}
 	        else if(command.equals("Length Set A")) {}
