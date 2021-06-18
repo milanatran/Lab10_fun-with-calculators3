@@ -78,7 +78,9 @@ public class UserInterfaceSet extends UserInterface {
 	        String command = event.getActionCommand();
 
 	        if(command.equals("Union")) {
+	        	//get the JTexts for set A and set B and save in field vars in class CalcEngineSet
 	        	 calcSet.setSet(display.getText(), displaySet2.getText());
+	        	 //call union() and set resulting set as result text
 	             displayResult.setText( calcSet.union().toString());
 	        }
 	        else if(command.equals("Intersection")) {
@@ -90,13 +92,15 @@ public class UserInterfaceSet extends UserInterface {
 	        	 displayResult.setText( calcSet.subtraction().toString());
 	        }
 	        else if(command.equals("Clear"))  {
-	        	calcSet.clear();
+	        	display.setText("Set A");
+	        	displaySet2.setText("Set B");
+	        	displayResult.setText("Result");
 	        }
-	        else if(command.equals("Push Set A")) {}
-	        else if(command.equals("Push Set B")) {}
-	        else if(command.equals("Length Set A")) {}
-	        else if(command.equals("Length Set B")) {}
+	        else if(command.equals("Push Set A")) {} //needs implementation
+	        else if(command.equals("Push Set B")) {} //needs implementation
+	        else if(command.equals("Length Set A")) {} //needs implementation
+	        else if(command.equals("Length Set B")) {} //needs implementation
 	        
-	        redisplay();
+	        //redisplay();
 	    }
 }

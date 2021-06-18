@@ -9,12 +9,13 @@ public class CalcEngineSet extends CalcEngine{
     Set<String> setResult = new HashSet<String>();
     
     public static void main (String[] args) {
+    	//testing the methods (will be deleted)
     	CalcEngineSet c = new CalcEngineSet();
     	c.setA.addAll(Arrays.asList(new String[] { "1", "3", "5", "7", "9" }));
     	c.setB.addAll(Arrays.asList(new String[] { "12", "1", "3", "4", "6", "9" }));
     	System.out.println("Set A: " + c.setA);
     	System.out.println("Set B: " + c.setB);
-    	System.out.println(c.subtraction());
+    	System.out.println(c.intersection());
     	System.out.println("Set A: " + c.setA);
     	System.out.println("Set B: " + c.setB);
     	System.out.println("Set Res: " + c.setResult);
@@ -26,10 +27,8 @@ public class CalcEngineSet extends CalcEngine{
         super();
     }
     
-    public void setDisplayValue(String display) {
-    	displayValue = Integer.parseInt(display);
-    }
     
+    //Converts the String from text inputs to a set
     public Set<String> stringToSet(String input) {
     	Set<String> set = new HashSet<String>();
 		String[] array = input.split("");
@@ -39,17 +38,14 @@ public class CalcEngineSet extends CalcEngine{
     	return set;
     }
     
-    public void setResult() {
-    	
-    }
-    
+    //saves the text inputs converted as sets into the field vars setA and setB
     public void setSet(String inputA, String inputB) {
     	setA = stringToSet(inputA);
     	setB = stringToSet(inputB);
     }
     
-    public void clear() {}
-    
+    //Calculates the union between setA and setB
+    //returns the result set
     public Set<String> union(){
     	
     	setResult.addAll(setA);
@@ -58,6 +54,9 @@ public class CalcEngineSet extends CalcEngine{
     	return setResult;
     }
     
+    
+  //Calculates the intersection between setA and setB
+    //returns the result set
     public Set<String> intersection(){
     	setResult.addAll(setA);
     	setResult.retainAll(setB);
@@ -65,6 +64,9 @@ public class CalcEngineSet extends CalcEngine{
     	return setResult;
     }
     
+    
+  //Calculates the subtraction between setA and setB
+    //returns the result set
     public Set<String> subtraction(){
     	setResult.addAll(setA);
     	setResult.removeAll(setB);
