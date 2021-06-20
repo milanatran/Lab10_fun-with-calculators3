@@ -11,11 +11,15 @@ public class CalcEngineSet extends CalcEngine{
     public static void main (String[] args) {
     	//testing the methods (will be deleted)
     	CalcEngineSet c = new CalcEngineSet();
-    	c.setA.addAll(Arrays.asList(new String[] { "1", "3", "5", "7", "9" }));
-    	c.setB.addAll(Arrays.asList(new String[] { "12", "1", "3", "4", "6", "9" }));
+    	c.setA.addAll(Arrays.asList(new String[] { "1", "2", "3", "4"}));
+    	c.setB.addAll(Arrays.asList(new String[] { "3", "4", "5", "6" }));
+    	System.out.println("Intersection" + c.intersection());
     	System.out.println("Set A: " + c.setA);
     	System.out.println("Set B: " + c.setB);
-    	System.out.println(c.intersection());
+    	System.out.println("Union" + c.union());
+    	System.out.println("Set A: " + c.setA);
+    	System.out.println("Set B: " + c.setB);
+    	System.out.println("Intersection" + c.intersection());
     	System.out.println("Set A: " + c.setA);
     	System.out.println("Set B: " + c.setB);
     	System.out.println("Set Res: " + c.setResult);
@@ -38,6 +42,8 @@ public class CalcEngineSet extends CalcEngine{
     	return set;
     }
     
+  
+    
     //saves the text inputs converted as sets into the field vars setA and setB
     public void setSet(String inputA, String inputB) {
     	setA = stringToSet(inputA);
@@ -47,7 +53,8 @@ public class CalcEngineSet extends CalcEngine{
     //Calculates the union between setA and setB
     //returns the result set
     public Set<String> union(){
-    	
+    	//first empty out the setResult
+    	setResult.removeAll(setResult);
     	setResult.addAll(setA);
     	setResult.addAll(setB);
     	
@@ -58,6 +65,7 @@ public class CalcEngineSet extends CalcEngine{
   //Calculates the intersection between setA and setB
     //returns the result set
     public Set<String> intersection(){
+    	setResult.removeAll(setResult);
     	setResult.addAll(setA);
     	setResult.retainAll(setB);
     	
@@ -68,9 +76,11 @@ public class CalcEngineSet extends CalcEngine{
   //Calculates the subtraction between setA and setB
     //returns the result set
     public Set<String> subtraction(){
+    	setResult.removeAll(setResult);
     	setResult.addAll(setA);
     	setResult.removeAll(setB);
     	return setResult;
     }
+    
     
 }

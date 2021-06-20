@@ -8,9 +8,10 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class UserInterfaceSet extends UserInterface {
 
@@ -69,6 +70,8 @@ public class UserInterfaceSet extends UserInterface {
         
         contentPane.add(displayResult, BorderLayout.SOUTH);
         //contentPane.add(status, BorderLayout.SOUTH);
+        
+        
 
         frame.pack();
 	}
@@ -96,10 +99,15 @@ public class UserInterfaceSet extends UserInterface {
 	        	displaySet2.setText("Set B");
 	        	displayResult.setText("Result");
 	        }
-	        else if(command.equals("Push Set A")) {} //needs implementation
+	        else if(command.equals("Push Set A")) {
+	        		//if(displayResult.getText().equals("Result")) {} //do nothing
+	        		//else display.setText(calcSet.pushSetA());
+	        	} 
 	        else if(command.equals("Push Set B")) {} //needs implementation
 	        else if(command.equals("Length Set A")) {} //needs implementation
 	        else if(command.equals("Length Set B")) {} //needs implementation
+	        
+	       
 	        
 	        //redisplay();
 	    }
