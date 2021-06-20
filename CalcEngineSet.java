@@ -42,8 +42,6 @@ public class CalcEngineSet extends CalcEngine{
     	return set;
     }
     
-  
-    
     //saves the text inputs converted as sets into the field vars setA and setB
     public void setSet(String inputA, String inputB) {
     	setA = stringToSet(inputA);
@@ -82,5 +80,31 @@ public class CalcEngineSet extends CalcEngine{
     	return setResult;
     }
     
+    public String pushSetA() {
+    	String res = "";
+    	for(String s : setResult) {
+    		res += s;
+    	}
+    	return res;
+    }
     
+    public String pushSetB() {
+    	String res = "";
+    	for(String s : setResult) {
+    		res += s;
+    	}
+    	return res;
+    }
+    
+    public String lengthSetA() {
+    	Integer i = setA.size();
+    	
+    	return i.toString();    
+    }
+    
+    public String lengthSetB() {
+    	Integer i = setB.size();
+    	
+    	return i.toString();
+    }
 }
