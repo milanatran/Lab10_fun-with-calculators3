@@ -101,11 +101,11 @@ public class UserInterfaceSet extends UserInterface {
 	        }
 	        else if(command.equals("Push Set A")) {
 	        		if(displayResult.getText().equals("Result")) {} //do nothing
-	        		else display.setText(calcSet.pushSetA());
+	        		else display.setText(calcSet.pushSet());
 	        	} 
 	        else if(command.equals("Push Set B")) {
 	        	if(displayResult.getText().equals("Result")) {} //do nothing
-        		else displaySet2.setText(calcSet.pushSetB());
+        		else displaySet2.setText(calcSet.pushSet());
 	        } 
 	        else if(command.equals("Length Set A")) {
 	        	calcSet.setSet(display.getText(), displaySet2.getText());

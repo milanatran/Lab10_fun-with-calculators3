@@ -48,11 +48,13 @@ public class CalcEngineSet extends CalcEngine{
     	setB = stringToSet(inputB);
     }
     
-    //Calculates the union between setA and setB
-    //returns the result set
+    /**
+     * Calculates the union between setA and setB
+     * @return the result set
+     */
     public Set<String> union(){
     	//first empty out the setResult
-    	setResult.removeAll(setResult);
+    	setResult.clear();
     	setResult.addAll(setA);
     	setResult.addAll(setB);
     	
@@ -60,10 +62,12 @@ public class CalcEngineSet extends CalcEngine{
     }
     
     
-  //Calculates the intersection between setA and setB
-    //returns the result set
+    /**
+     * Calculates the intersection between setA and setB
+     * @return the result set
+     */
     public Set<String> intersection(){
-    	setResult.removeAll(setResult);
+    	setResult.clear();
     	setResult.addAll(setA);
     	setResult.retainAll(setB);
     	
@@ -71,37 +75,40 @@ public class CalcEngineSet extends CalcEngine{
     }
     
     
-  //Calculates the subtraction between setA and setB
-    //returns the result set
+    /**
+     * Calculates the subtraction between setA and setB
+     * @return the result set
+     */
     public Set<String> subtraction(){
-    	setResult.removeAll(setResult);
+    	setResult.clear();
     	setResult.addAll(setA);
     	setResult.removeAll(setB);
     	return setResult;
     }
     
-    public String pushSetA() {
+    /**
+     * @return the setResult as a String
+     */
+    public String pushSet() {
     	String res = "";
     	for(String s : setResult) {
     		res += s;
     	}
     	return res;
     }
-    
-    public String pushSetB() {
-    	String res = "";
-    	for(String s : setResult) {
-    		res += s;
-    	}
-    	return res;
-    }
-    
+   
+    /**
+     * @return the size of setA as a String
+     */
     public String lengthSetA() {
     	Integer i = setA.size();
     	
     	return i.toString();    
     }
     
+    /**
+     * @return the size of setA as a String
+     */
     public String lengthSetB() {
     	Integer i = setB.size();
     	
