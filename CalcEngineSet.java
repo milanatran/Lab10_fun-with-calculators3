@@ -35,7 +35,7 @@ public class CalcEngineSet extends CalcEngine{
     //Converts the String from text inputs to a set
     public Set<String> stringToSet(String input) {
     	Set<String> set = new HashSet<String>();
-		String[] array = input.split("");
+		String[] array = input.split(",");
 		for(String s : array) {
 			set.add(s);
 		}
@@ -92,9 +92,9 @@ public class CalcEngineSet extends CalcEngine{
     public String pushSet() {
     	String res = "";
     	for(String s : setResult) {
-    		res += s;
+    		res = res + s + ",";
     	}
-    	return res;
+    	return res.substring(0, res.length()-1);
     }
    
     /**
